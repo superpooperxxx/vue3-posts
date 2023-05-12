@@ -13,19 +13,14 @@ export default {
       limit: 5,
       limitOptions: [5, 10, 15, 20],
       usersId: [],
+      totalPosts: 100,
     };
   },
-  // methods: {
-  //   async getUsersIds() {
-  //     try {
-  //       const res =
-  //     } catch (error) {
-
-  //     } finally {
-
-  //     }
-  //   }
-  // }
+  methods: {
+    setTotalPosts(total) {
+      this.totalPosts = total;
+    },
+  },
 };
 </script>
 
@@ -40,14 +35,20 @@ export default {
     </div>
 
     <div class="posts-page__posts-list">
-      <PostsList :limit="limit" :page="page" />
+      <PostsList :limit="limit" :page="page" @setTotalPosts="setTotalPosts" />
     </div>
 
     <div class="posts-page__btns">
       <button class="posts-page__load-more-btn" @click="page--" v-if="page > 1">
         Prev
       </button>
-      <button class="posts-page__load-more-btn" @click="page++">Next</button>
+      <button
+        class="posts-page__load-more-btn"
+        @click="page++"
+        v-if="page < totalPosts / limit"
+      >
+        Next
+      </button>
     </div>
   </main>
 </template>

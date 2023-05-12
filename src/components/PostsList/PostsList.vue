@@ -48,6 +48,8 @@ export default {
           this.$router.push("/404");
         }
 
+        this.$emit("setTotalPosts", res.headers["x-total-count"]);
+
         this.posts = data;
       } catch (error) {
         alert(error);
