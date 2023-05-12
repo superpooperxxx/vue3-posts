@@ -1,6 +1,6 @@
 @use "@/assets/styles/_colors.scss" as *;
 
-.comment {
+.post {
   height: 100%;
   padding: 20px;
   background-color: $color__background--secondary;
@@ -15,21 +15,13 @@
 
   &__id {
     font-weight: 700;
-    color: $color__icons;
-  }
-
-  &__name {
-    font-size: 14px;
-    text-transform: uppercase;
-  }
-
-  &__email {
-    display: block;
-    margin-bottom: 20px;
-
-    font-size: 12px;
     color: $color__accent;
-    text-decoration: none;
+  }
+
+  &__title {
+    font-size: 14px;
+    line-height: 18px;
     text-transform: uppercase;
+    color: $color__icons;
   }
 }

@@ -13,12 +13,12 @@ export default {
   data() {
     return {
       comments: [],
-      commentsLoaded: false,
+      isCommentsLoaded: false,
     };
   },
   methods: {
     async getComments() {
-      this.commentsLoaded = false;
+      this.isCommentsLoaded = false;
 
       try {
         const currentPostId = this.$route.params.id;
@@ -37,7 +37,7 @@ export default {
       } catch (error) {
         alert(error);
       } finally {
-        this.commentsLoaded = true;
+        this.isCommentsLoaded = true;
       }
     },
   },
@@ -45,7 +45,7 @@ export default {
 </script>
 
 <template>
-  <ul class="comments-list" v-if="commentsLoaded">
+  <ul class="comments-list" v-if="isCommentsLoaded">
     <Comment :comment="comment" v-for="comment in comments" />
   </ul>
   <Loader v-else />

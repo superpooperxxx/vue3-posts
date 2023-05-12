@@ -1,0 +1,26 @@
+@use "@/assets/styles/_colors.scss" as *;
+
+.custom-select {
+  &__title {
+    margin-bottom: 5px;
+
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $color__icons;
+  }
+
+  &__select {
+    width: 120px;
+    height: 40px;
+
+    padding: 5px;
+
+    font-size: 16px;
+    color: $color__primary;
+
+    background: none;
+    outline: none;
+
+    border: 1px solid $color__accent;
+  }
+}

@@ -1,0 +1,40 @@
+@use "@/assets/styles/_colors.scss" as *;
+
+.posts-page {
+  &__filters {
+    margin-bottom: 20px;
+  }
+
+  &__posts-list {
+    margin-bottom: 20px;
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  &__load-more-btn {
+    height: 40px;
+    padding: 0 20px;
+
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $color__background;
+
+    background-color: $color__accent;
+    border-radius: 15px;
+
+    transition-duration: 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &:active {
+      background-color: $color__accent--hover;
+    }
+  }
+}
