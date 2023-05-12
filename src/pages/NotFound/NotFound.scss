@@ -1,0 +1,8 @@
+@use "@/assets/styles/_colors.scss" as *;
+
+.not-found-page {
+  &__text {
+    text-align: center;
+    color: $color__accent;
+  }
+}

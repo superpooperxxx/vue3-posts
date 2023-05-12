@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Posts from "@/pages/Posts.vue";
-import Comments from "@/pages/Comments.vue";
+import Posts from "@/pages/Posts/Posts.vue";
+import Comments from "@/pages/Comments/Comments.vue";
+import NotFound from "@/pages/NotFound/NotFound.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,6 +17,14 @@ const router = createRouter({
     {
       path: "/posts/:id/comments",
       component: Comments,
+    },
+    {
+      path: "/404",
+      component: NotFound,
+    },
+    {
+      path: "/:catchAll(.*)",
+      redirect: "/404",
     },
   ],
 });
