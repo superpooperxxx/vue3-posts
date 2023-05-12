@@ -1,0 +1,14 @@
+@use "@/assets/styles/_mixins.scss" as *;
+
+.comments-list {
+  display: grid;
+  gap: 20px;
+
+  @include onTablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
