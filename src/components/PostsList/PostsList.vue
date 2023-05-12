@@ -16,6 +16,10 @@ export default {
       type: String,
       default: "5",
     },
+    userFilter: {
+      type: String,
+      default: "",
+    },
   },
   data() {
     return {
@@ -33,15 +37,22 @@ export default {
     page() {
       this.getPosts();
     },
+    userFilter() {
+      this.getPosts();
+    },
   },
   methods: {
     async getPosts() {
       this.isPostsLoaded = false;
 
+      let URL = `https://jsonplaceholder.typicode.com/posts?_limit=${this.limit}&_page=${this.page}`;
+
+      if (this.userFilter) {
+        URL += `&userId=${this.userFilter}`;
+      }
+
       try {
-        const res = await axios.get(
-          `https://jsonplaceholder.typicode.com/posts?_limit=${this.limit}&_page=${this.page}`
-        );
+        const res = await axios.get(URL);
         const { data } = res;
 
         if (!data.length) {

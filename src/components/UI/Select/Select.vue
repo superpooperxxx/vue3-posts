@@ -28,6 +28,7 @@ export default {
       :value="modelValue"
       @change="$emit('update:modelValue', $event.target.value)"
     >
+      <slot></slot>
       <option
         :value="option"
         v-for="option in options"
