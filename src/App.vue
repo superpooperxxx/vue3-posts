@@ -1,8 +1,17 @@
-<script></script>
+<script>
+import Header from "@/components/Header/Header.vue";
+import "./App.scss";
+
+export default {
+  components: {
+    Header,
+  },
+};
+</script>
 
 <template>
-  <div>Hello, world!</div>
-  <RouterView></RouterView>
+  <div class="app container">
+    <Header />
+    <RouterView></RouterView>
+  </div>
 </template>
-
-<style></style>
