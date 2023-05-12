@@ -10,7 +10,11 @@ const router = createRouter({
       component: Posts,
     },
     {
-      path: "/comments",
+      path: "/posts",
+      redirect: "/",
+    },
+    {
+      path: "/posts/:id/comments",
       component: Comments,
     },
   ],
