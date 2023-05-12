@@ -4,6 +4,7 @@ import Comments from "@/pages/Comments/Comments.vue";
 import NotFound from "@/pages/NotFound/NotFound.vue";
 
 const router = createRouter({
+  mode: "history",
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
