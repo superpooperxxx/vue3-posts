@@ -15,7 +15,7 @@ export default {
   <article class="comment">
     <div class="comment__header">
       <p class="comment__id">#{{ comment.id }}</p>
-      <p class="comment__name">{{ comment.name }}</p>
+      <h3 class="comment__name">{{ comment.name }}</h3>
     </div>
     <a :href="`mailto:'${comment.email}`" class="comment__email">{{
       comment.email
